@@ -85,7 +85,7 @@ def run_backtest(file_path):
     cerebro.broker.set_slippage_perc(0.0001)  # 设置滑点
 
     # 设置佣金
-    cerebro.broker.setcommission(commission=0.001)  # 修改为 `setcommission`
+    cerebro.broker.setcommission(commission=0.001)
 
     # 设置回测时间周期
     cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')
@@ -96,8 +96,10 @@ def run_backtest(file_path):
     # 获取回测结果
     final_value = cerebro.broker.getvalue()
     initial_value = 1000000  # 初始资金
+    
     # 计算收益率
     return_on_investment = ((final_value - initial_value) / initial_value)
+    
     return final_value, return_on_investment
 
 
@@ -113,8 +115,6 @@ def backtest():
 
     # 运行回测并返回最终资产和收益率
     final_value, return_on_investment = run_backtest(file_path)
-
-
 
     return jsonify({
         "final_value": final_value,
