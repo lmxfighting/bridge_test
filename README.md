@@ -1,41 +1,13 @@
-# bridge_test
-如果你不想按照我们的要求做而是想搭建一些更有趣的策略，我们十分欢迎！我们渴望看到你的创造力，你可以随时向我们的邮箱发送你的代码 litterpigger@gmail.com
-
-如果你使用AI来帮助你完成答题，请你在该文件夹下新建一个名为prompt.txt的文件，并将你们的对话放入。如何正确的使用prompt与ai交互也是能力之一，使用ai不会对你的成绩有任何消极影响。
-
-使用AI却不按上面这么做我们则会直接取消你的成绩。
-
-
-[前置]
-
-回测框架你可以自行搭建，也可以使用vnpy或backtrader等常用的回测框架
-
-通过tushare sdk可以帮助你更方便的获取股票数据。你也可以自行下载数据。
-
-https://tushare.pro/document/1?doc_id=7
-
-https://tushare.pro/document/2
-
-https://tushare.pro/document/1?doc_id=131
-
-后端的框架请自行挑选，你可以自由的使用pip中所有的库
+API使用方法：
+打开 Postman，创建一个新的请求。选择 POST 方法，并设置 URL 为：http://127.0.0.1:5000/backtest
+切换到 "Body" 选项卡，选择 raw，然后选择 JSON 格式，输入以下请求体：
+{
+  "file_path": "pingan.csv"
+}
+创建一个新的请求，选择 GET 方法，并设置 URL 为：http://127.0.0.1:5000/backtest_result
+发送请求，查看返回的 final_value（最终资产总值）和 return_on_investment（收益率）。
 
 
-[要求]
-
-你需要首先fork这个代码仓库到你的github,然后完成开发后提交到你的github上面，最后只需要发你的github代码仓库连接给我们就可以
-
-
-1. 回测品类为平安银行，回测周期为2023年1月1日到12月31日。本金为1,000,000,每次买入为本金的百分之20.滑点为万分之一。 
-
-
-2. 策略为当12日的价格均线穿越26日的价格均线时买入。当价格跌破26均线时卖出。你需要在backtest文件夹下完成策略的回测，并即将为后端提供结果
-
-
-3. 你可以使用任意的python后端框架。你所需要实现的api: 第一个为post方法，为设置周期以及对应回测的股票。第二个为get方法，将该策略回测的结果的收益率,最后的总权益返回。
-
-
-4.最后你需要在README.md中说明你的api使用方法，方便我们进行测试。
-
-
+PS：我的tushare积分后面不够了，失去了访问权限，所以只能通过读取csv文件获取股票数据。
+运行结果如图所示：https://github.com/user-attachments/assets/9cf085a8-cd97-4ebe-8feb-1ac6344ddcec
 
