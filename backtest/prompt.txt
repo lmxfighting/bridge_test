@@ -1,0 +1,3 @@
+指令1：写python代码完成：回测框架可以自行搭建，也可以使用vnpy或backtrader等常用的回测框架。通过tushare sdk可以帮助你更方便的获取股票数据。后端的框架请自行挑选，你可以自由的使用pip中所有的库。[要求] 回测品类为平安银行，回测周期为2023年1月1日到12月31日。本金为1000000，每次买入为本金的百分之20，滑点为万分之一。策略为当12日的价格均线穿越26日的价格均线时买入。当价格跌破26均线时卖出。你需要完成策略的回测，并即将为后端提供结果。你可以使用任意的python后端框架。你所需要实现的api：第一个为post方法，为设置周期以及对应回测的股票。第二个为get方法，将该策略回测的结果的收益率，最后的总权益返回。 
+指令2：报错AttributeError: 'BackBroker' object has no attribute 'set_commission'
+指令3：报错IndexError: array assignment index out of range
